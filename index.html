@@ -18,69 +18,50 @@
       </ul>
     </nav>
   </header>
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-      <title>Rick and Morty Characters</title>
-      <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-      <header>
-        <nav>
-          <h1>Rick and Morty Characters</h1>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Characters</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-        </nav>
-      </header>
-  
-      <main>
-        <section>
-          <h2>Random Character Generator</h2>
-          <form>
-            <label for="gender">Gender:</label>
-            <select id="gender">
-              <option value="">All</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="genderless">Genderless</option>
-              <option value="unknown">Unknown</option>
-            </select>
-  
-            <label for="status">Status:</label>
-            <select id="status">
-              <option value="">All</option>
-              <option value="alive">Alive</option>
-              <option value="dead">Dead</option>
-              <option value="unknown">Unknown</option>
-            </select>
-  
-            <label for="species">Species:</label>
-            <input type="text" id="species" />
-  
-            <input type="submit" value="Generate" />
-          </form>
-  
-          <div class="result"></div>
-        </section>
-  
-        <section>
-          <h2>All Characters</h2>
-          <div class="row"></div> <!-- Agregamos este div -->
-  
-          <div class="pagination"></div>
-        </section>
-      </main>
-  
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="app.js"></script>
-    </body>
-  </html>
+
+  <main>
+    <section>
+      <h2>Random Character Generator</h2>
+      <form>
+        <label for="gender">Gender:</label>
+        <select id="gender">
+          <option value="">All</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="genderless">Genderless</option>
+          <option value="unknown">Unknown</option>
+        </select>
+
+        <label for="status">Status:</label>
+        <select id="status">
+          <option value="">All</option>
+          <option value="alive">Alive</option>
+          <option value="dead">Dead</option>
+          <option value="unknown">Unknown</option>
+        </select>
+
+        <label for="species">Species:</label>
+        <input type="text" id="species" />
+
+        <input type="submit" value="Generate" />
+      </form>
+
+      <div class="result"></div>
+    </section>
+
+    <section>
+      <h2>All Characters</h2>
+      <div class="row"></div> <!-- Agregamos este div -->
+
+      <div class="pagination"></div>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
 
 
   
