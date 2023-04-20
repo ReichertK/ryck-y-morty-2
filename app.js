@@ -58,38 +58,40 @@ function renderPagination(currentPage, totalPages) {
   }
 }
 
+function filterCharacters(event) {
+  event.preventDefault();
+
+  const gender = document.querySelector('#gender').value;
+  const status = document.querySelector('#status').value;
+  const species = document.querySelector('#species').value;
+
+  let url = `${API_URL}/character?`;
+  if (gender) {
+    url += `gender=${gender}&`;
+  }
+  if (status) {
+    url += `status=${status}&`;
+  }
+  if (species) {
+    url += `species=${species}&`;
+  }
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      renderCharacters(data.results);
+      renderPagination(1, data.info.pages);
+    })
+    .catch((error) => console.log(error));
+}
+
 function init() {
   fetchCharacters().then((characters) => {
     renderCharacters(characters);
   });
 
   const form = document.querySelector('form');
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const gender = document.querySelector('#gender').value;
-    const status = document.querySelector('#status').value;
-    const species = document.querySelector('#species').value;
-
-    let url = `${API_URL}/character?`;
-    if (gender) {
-      url += `gender=${gender}&`;
-    }
-    if (status) {
-      url += `status=${status}&`;
-    }
-    if (species) {
-      url += `species=${species}&`;
-    }
-
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        renderCharacters(data.results);
-        renderPagination(1, data.info.pages);
-      })
-      .catch((error) => console.log(error));
-  });
+  form.addEventListener('submit', filterCharacters);
 }
 
 init();
