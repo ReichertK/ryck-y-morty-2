@@ -2,9 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
   }
   
-  body {
+  body { 
     font-family: Arial, sans-serif;
   }
   
@@ -18,13 +19,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    /* nav flotante*/
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px 0;
   }
   
   nav h1 {
-    font-size: 2.5rem;
+    padding-left: 6px;
+    font-size: 2rem;
   }
   
   nav ul {
+    padding-right: 8px;
     list-style: none;
     display: flex;
   }
@@ -118,6 +129,26 @@
     background-color: #61dafb;
   }
   
+  footer {
+    height: 90px;
+    background-color:#282c34 ;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    
+  }
+
+  
+  .redes--sociales{
+     width: 100%;
+      color: white;
+      text-align: center;
+  }
+
+  .redes-- {
+    display: inline;
+    padding-left: 8px;
+  }
 
   @media only screen and (max-width: 600px) {
     .card {
