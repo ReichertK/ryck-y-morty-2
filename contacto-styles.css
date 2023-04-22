@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+
+  header {
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
+  }
+
+  .subtitulo-- {
+    margin-top: 30px;
+  }
+
+ /*aqui comienza el estilo del nav*/
+
+
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+
+    /* nav flotante*/
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px 0;
+  }
+  
+  nav h1 {
+    padding-left: 6px;
+    font-size: 2rem;
+  }
+  
+  nav ul {
+    padding-right: 8px;
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 1.5rem;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+/* a continuacion estilo del formulario*/
+
+form {
+    /* Centrar el formulario en la página */
+    margin: 0 auto;
+    width: 400px;
+    /* Esquema del formulario */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+  }
+form ul {
+    list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li {
+    list-style: none;
+    padding: .5em;
+    margin: 0;
+}
+
+form label {
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+  }
+
+  form li textarea {
+    width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+  height: 5em;
+
+}
+
+form li textarea {
+    width: 20em;
+    height: 10em;
+}
+
+.button{
+    padding-left: 90px; 
+    margin-left: .5em;
+  }
+  
+  .button--enviar {
+    border-radius: .2em;
+    color: white;
+    background-color:  #282c34;
+  }
+  
+
+
+
+
+/* Aqui comienza el estilo de footer */
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color:#282c34 ;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    
+  }
+
+  
+  .redes--sociales{
+     width: 100%;
+      color: white;
+      text-align: center;
+  }
+
+  .redes-- {
+    display: inline;
+    padding-left: 8px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .card {
+      width: 100%;
+    }
+  }
+  

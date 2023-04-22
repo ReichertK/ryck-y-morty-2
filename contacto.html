@@ -5,7 +5,8 @@
     <title>Contacto</title>
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="contacto-styles.css">
+  <link rel="icon" href="img/rick-and-morty-icon-png-images-29.png" type="image/x-icon">
   <script src="https://kit.fontawesome.com/04a594e2e2.js" crossorigin="anonymous"></script>
 </head>
 <header>
@@ -22,10 +23,37 @@
 </header>
 <body>
     <div>
-        <h2>
+        <h2 class="subtitulo--">
             Si tienes alguna consulta o sugerencia completa el siguiente formulario
         </h2>
     </div>
+
+    <!--seccion del formulario-->
+    <div class="formulario--contacto">
+      <form >
+        <ul>
+        <li>
+          <label>Nombre:</label>
+          <input type="text"/>
+        </li>
+        <li>
+          <label>Apellido</label>
+          <input type="text">
+        </li>
+        <li>
+          <label>Correo electrónico:</label>
+          <input type="email">
+        </li>
+        <li>
+          <label>Mensaje:</label>
+          <textarea></textarea>
+        </li>
+        <li class="button">
+          <button class="button--enviar" type="submit">Envíe su mensaje</button>
+        </li>
+    </div>
+     
+       
 
 <!--footer a continuacion-->
 <div class="pieDePagina--">
