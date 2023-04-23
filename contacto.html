@@ -109,6 +109,7 @@
           $("#alerta").addClass("d-none");
 
           let errores = false;
+          //Chequear la entrada de datos, y agregar la clase correspondiente para marcar el campo con error. Activar bandera de error si es necesario
           if ($("#nombre").val().length < 1) {
             $("#nombre").addClass("border-danger");
             errores = true;
@@ -129,6 +130,7 @@
             errores = true;
           } else $("#mensaje").addClass("border-success");
 
+          //Mostrar el mesaje en la alerta, aplicar la clase correspondiente de estado y hacerla visible
           if (errores == false) {
             $("#alerta").text("¡La solicitud se ha enviado con éxito!");
             $("#alerta").addClass("alert-success");
@@ -140,6 +142,7 @@
           }
         });
 
+        //Funcion que comprueba si una dirección de correo es correcta mediante expresiones regulares
         function checkEmail(email) {
           let testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
           if (testEmail.test(email)) return true;
