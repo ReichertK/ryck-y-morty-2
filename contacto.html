@@ -26,18 +26,20 @@
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="sobreNosotros.html">Sobre nosotros</a></li>
-          <li><a href="#">Personajes</a></li>
-          <li><a href="#">Episodios</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="personajes.html">Personajes</a></li>
+          <li><a href="">Episodios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
     </header>
     <div>
-      <h2 class="subtitulo--">Si tienes alguna consulta o sugerencia completa el siguiente formulario</h2>
+      <!-- Formulario de contacto sin bootstrap (oculto con d-none -> quitar para mostrar)-->
+      <h2 class="subtitulo-- d-none">Si tienes alguna consulta o sugerencia completa el siguiente formulario</h2>
     </div>
 
     <!--seccion del formulario-->
-    <div class="formulario--contacto">
+    <!-- Formulario de contacto sin bootstrap (oculto con d-none -> quitar para mostrar)-->
+    <div class="formulario--contacto d-none">
       <form>
         <ul>
           <li>
@@ -62,6 +64,89 @@
         </ul>
       </form>
     </div>
+
+    <!-- Formulario de contacto con bootstrap (ocultar con d-none)-->
+    <div class="container w-75" id="contacto">
+      <div class="mt-5 mb-2">
+        <h2>Sección de contacto</h2>
+        <p>Si tienes alguna consulta o sujerencia, por favor, completa el siguiente formulario.</p>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="nombre" class="col-form-label">Nombre</label>
+          <input type="text" class="campo form-control" id="nombre" placeholder="Nombre" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="apellido" class="col-form-label">Apellido</label>
+          <input type="text" class="campo form-control" id="apellido" placeholder="Apellido" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email" class="col-form-label">Email</label>
+        <input type="email" class="campo form-control" id="email" placeholder="Email" />
+      </div>
+      <div class="form-group">
+        <label for="mensaje" class="col-form-label">Mensaje</label>
+        <textarea class="campo form-control" id="mensaje" rows="5"></textarea>
+      </div>
+      <div class="mt-3">
+        <button type="submit" class="btn btn-primary w-100" id="enviar">Enviar consulta</button>
+      </div>
+      <div class="campo alert mt-3 mb-3 d-none" role="alert" id="alerta">
+        <div>¡La solicitud se ha enviendo con éxito!</div>
+      </div>
+
+      <form class="d-none"></form>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#enviar").click(function () {
+          console.log($("#nombre").text());
+          //Reiniciar el estado del alerta y de los bordes al iniciar la validación
+          $(".campo").removeClass("border-danger", "border-success");
+          $("#alerta").removeClass("alert-danger", "alert-success");
+          $("#alerta").addClass("d-none");
+
+          let errores = false;
+          if ($("#nombre").val().length < 1) {
+            $("#nombre").addClass("border-danger");
+            errores = true;
+          } else $("#nombre").addClass("border-success");
+
+          if ($("#apellido").val().length < 1) {
+            $("#apellido").addClass("border-danger");
+            errores = true;
+          } else $("#apellido").addClass("border-success");
+
+          if (checkEmail($("#email").val()) == false) {
+            $("#email").addClass("border-danger");
+            errores = true;
+          } else $("#email").addClass("border-success");
+
+          if ($("#mensaje").val().length < 1) {
+            $("#mensaje").addClass("border-danger");
+            errores = true;
+          } else $("#mensaje").addClass("border-success");
+
+          if (errores == false) {
+            $("#alerta").text("¡La solicitud se ha enviado con éxito!");
+            $("#alerta").addClass("alert-success");
+            $("#alerta").removeClass("d-none");
+          } else {
+            $("#alerta").text("Por favor, complete correctamente los campos en rojo");
+            $("#alerta").addClass("alert-danger");
+            $("#alerta").removeClass("d-none");
+          }
+        });
+
+        function checkEmail(email) {
+          let testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+          if (testEmail.test(email)) return true;
+          return false;
+        }
+      });
+    </script>
 
     <!--footer a continuacion-->
     <div class="pieDePagina--">
