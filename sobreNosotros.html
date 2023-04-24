@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Sobre nosotros</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="nosotros-styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="img/rick-and-morty-icon-png-images-29.png" type="image/x-icon" />
 
     <link
@@ -23,20 +23,32 @@
     <script src="https://kit.fontawesome.com/04a594e2e2.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <header>
-      <nav>
-        <h1>Trabajo Integrador</h1>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="sobreNosotros.html">Sobre nosotros</a></li>
-          <li><a href="personajes.html">Personajes</a></li>
-          <li><a href="">Episodios</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark pt-3 pb-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Tienda Rick&Morty</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link active" href="sobreNosotros.html">Sobre nosotros</a>
+            <a class="nav-link" href="personalizado.html">Personajes</a>
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-    <div class="nostros--">
+    <div class="container sep-nav">
       <div>
         <h2 class="subtitulo--">Sobre nosotros</h2>
       </div>

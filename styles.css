@@ -1,134 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  body { 
-    font-family: Arial, sans-serif;
-    min-width: 350px;
-  }
-  
-  header {
-    background-color: #282c34;
-    color: white;
-    padding: 20px;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
 
-    /* nav flotante*/
-    position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-  padding: 10px 0;
-  }
-  
-  nav h1 {
-    padding-left: 6px;
-    font-size: 2rem;
-  }
-  
-  nav ul {
-    padding-right: 8px;
-    list-style: none;
-    display: flex;
-  }
-  
-  nav ul li {
-    margin-left: 1.5rem;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
-  
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  section {
-    margin-top: 50px;
-    width: 95%;
-    max-width: 1000px;
-  }
-  
-  section h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
-  
-  section p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-  
-  form {
-    width: 100%;
-  }
-  
-  .card2 {
-    /* padding: 10px; */
-    /* margin-bottom: 10px; */
-  }
-  
-  .card img {
-    /* width: 100%;
-    height: auto;
-    object-fit: cover;
+  body { 
+    /* font-family: Arial, sans-serif; */
+    min-width: 350px;
     
-    border-radius: 5px;
-    margin-bottom: 10px; */
   }
   
-  .card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .card p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-  
- 
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-  }
-  
-  .pagination button {
-    background-color: #282c34;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0 10px;
-  }
-  
-  .pagination button:hover {
-    background-color: #61dafb;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .pagination .active {
-    background-color: #61dafb;
-  }
   
   footer {
     height: 90px;
@@ -151,11 +27,11 @@
     padding-left: 8px;
   }
 
-  @media only screen and (max-width: 600px) {
+  /* @media only screen and (max-width: 600px) {
     .card {
       width: 100%;
     }
-  }
+  } */
   
 
   .personaje:hover {
@@ -171,3 +47,6 @@
   height: 400px;
 }
 
+.sep-nav {
+  margin-top: 100px;
+}

@@ -5,7 +5,7 @@
     <title>Contacto</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="contacto-styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="img/rick-and-morty-icon-png-images-29.png" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/04a594e2e2.js" crossorigin="anonymous"></script>
 
@@ -25,53 +25,32 @@
   </head>
 
   <body>
-    <header>
-      <nav>
-        <h1>Trabajo Integrador</h1>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="sobreNosotros.html">Sobre nosotros</a></li>
-          <li><a href="personajes.html">Personajes</a></li>
-          <li><a href="">Episodios</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div>
-      <!-- Formulario de contacto sin bootstrap (oculto con d-none -> quitar para mostrar)-->
-      <h2 class="subtitulo-- d-none">Si tienes alguna consulta o sugerencia completa el siguiente formulario</h2>
-    </div>
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark pt-3 pb-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Tienda Rick&Morty</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="sobreNosotros.html">Sobre nosotros</a>
+            <a class="nav-link" href="personalizado.html">Personajes</a>
+            <a class="nav-link active" href="contacto.html">Contacto</a>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-    <!--seccion del formulario-->
-    <!-- Formulario de contacto sin bootstrap (oculto con d-none -> quitar para mostrar)-->
-    <div class="formulario--contacto d-none">
-      <form>
-        <ul>
-          <li>
-            <label>Nombre:</label>
-            <input type="text" />
-          </li>
-          <li>
-            <label>Apellido</label>
-            <input type="text" />
-          </li>
-          <li>
-            <label>Correo electrónico:</label>
-            <input type="email" />
-          </li>
-          <li>
-            <label>Mensaje:</label>
-            <textarea></textarea>
-          </li>
-          <li class="button">
-            <button class="button--enviar" type="submit">Envíe su mensaje</button>
-          </li>
-        </ul>
-      </form>
-    </div>
-
-    <!-- Formulario de contacto con bootstrap (ocultar con d-none)-->
-    <div class="container w-75" id="contacto">
+    <div class="container w-75 sep-nav" id="contacto">
       <div class="mt-5 mb-2">
         <h2>Sección de contacto</h2>
         <p>Si tienes alguna consulta o sujerencia, por favor, completa el siguiente formulario.</p>

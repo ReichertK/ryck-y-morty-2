@@ -18,48 +18,58 @@
     <script src="https://kit.fontawesome.com/04a594e2e2.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <header>
-      <nav>
-        <h1>Trabajo Integrador</h1>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="sobreNosotros.html">Sobre nosotros</a></li>
-          <li><a href="personajes.html">Personajes</a></li>
-          <li><a href="">Episodios</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark pt-3 pb-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Tienda Rick&Morty</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" href="index.html">Inicio</a>
+            <a class="nav-link" href="sobreNosotros.html">Sobre nosotros</a>
+            <a class="nav-link" href="personalizado.html">Personajes</a>
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-    <main>
-      <section>
-        <h2>Random Character Generator</h2>
-        <form>
-          <label for="gender">Gender:</label>
-          <select id="gender">
-            <option value="">All</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="genderless">Genderless</option>
-            <option value="unknown">Unknown</option>
-          </select>
+    <div class="container sep-nav">
+      <h2>Random Character Generator</h2>
+      <form>
+        <label for="gender">Gender:</label>
+        <select id="gender">
+          <option value="">All</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="genderless">Genderless</option>
+          <option value="unknown">Unknown</option>
+        </select>
 
-          <label for="status">Status:</label>
-          <select id="status">
-            <option value="">All</option>
-            <option value="alive">Alive</option>
-            <option value="dead">Dead</option>
-            <option value="unknown">Unknown</option>
-          </select>
+        <label for="status">Status:</label>
+        <select id="status">
+          <option value="">All</option>
+          <option value="alive">Alive</option>
+          <option value="dead">Dead</option>
+          <option value="unknown">Unknown</option>
+        </select>
 
-          <label for="species">Species:</label>
-          <input type="text" id="species" />
+        <label for="species">Species:</label>
+        <input type="text" id="species" />
 
-          <input type="submit" value="Generate" />
-        </form>
+        <input type="submit" value="Generate" />
+      </form>
 
-        <div class="result"></div>
-      </section>
+      <div class="result"></div>
 
       <section>
         <h2>All Characters</h2>
@@ -68,7 +78,7 @@
 
         <div class="pagination"></div>
       </section>
-    </main>
+    </div>
 
     <!--footer a continuacion-->
     <div class="pieDePagina--">
