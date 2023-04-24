@@ -16,58 +16,63 @@ function renderCharacters(characters) {
   container.innerHTML = '';
 
   characters.forEach((character) => {
-    const div_cont = document.createElement('div');
-    div_cont.classList.add("card", "personaje", "p-0");
-    div_cont.id = "character" + character.id;
+    let div_cont = document.createElement('div');   //div contenedor de la tarjeta
+    div_cont.classList.add( "p-0", "g-0", "gy-2");
 
-    const img = document.createElement('img');
+    const div_card = document.createElement('div');     //div tarjeta principal
+    div_card.classList.add("card", "personaje", "p-0", "m-1", "h-100", "shadow-sm");
+    div_card.id = "character" + character.id;
+
+    let div = document.createElement('div');    //div cuerpo de la tarjeta
+    div.classList.add("card-body");
+
+    let img = document.createElement('img');    //imagen del personaje
     img.classList.add('card-img-top');
     img.alt = character.name;
     img.src = character.image;
 
-    const div = document.createElement('div');
-    div.classList.add("card-body");
-
-    const h5 = document.createElement('h5');
+    let h5 = document.createElement('h5');    //titulo
     h5.classList.add('card-title');
     h5.textContent = character.name;
 
-    const p = document.createElement('p');
+    let p = document.createElement('p');      //Info
     p.classList.add('card-text');
     p.textContent = `${character.species} - ${character.status}`;
 
     div.append(h5, p);
-    div_cont.append(img, div);
+    div_card.append(img, div);
+    div_cont.append(div_card);
     container.append(div_cont);
   });
+
   
 }
 
 // Función que renderiza los botones de paginación en el DOM
-function renderPagination(currentPage, totalPages) {
-  const container = document.querySelector('#paginas');
-  container.innerHTML = '';
+// function renderPagination(currentPage, totalPages) {
+//   const container = document.querySelector('#paginas');
+//   container.innerHTML = '';
 
-  for (let i = 1; i <= totalPages; i++) {
-    const button = document.createElement('button');
-    button.classList.add('btn');
-    if (i === currentPage) {
-      button.classList.add('btn-primary');
-    } else {
-      button.classList.add('btn-outline-primary');
-    }
-    button.textContent = i;
+//   for (let i = 1; i <= totalPages; i++) {
+//     const button = document.createElement('button');
+//     button.classList.add('btn');
+//     if (i === currentPage) {
+//       button.classList.add('btn-primary');
+//     } else {
+//       button.classList.add('btn-outline-primary');
+//     }
+//     button.textContent = i;
 
-    button.addEventListener('click', () => {
-      fetchCharacters(i).then((characters) => {
-        renderCharacters(characters);
-        renderPagination(i, totalPages);
-      });
-    });
+//     button.addEventListener('click', () => {
+//       fetchCharacters(i).then((characters) => {
+//         renderCharacters(characters);
+//         renderPagination(i, totalPages);
+//       });
+//     });
 
-    container.append(button);
-  }
-}
+//     container.append(button);
+//   }
+// }
 
 // Función que se ejecuta al cargar la página y que inicializa el estado y los eventos
 function init() {
