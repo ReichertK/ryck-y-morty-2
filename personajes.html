@@ -9,79 +9,232 @@
     <link rel="stylesheet" href="styles.css" />
 
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/04a594e2e2.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <header>
-      <nav>
-        <h1>Trabajo Integrador</h1>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="sobreNosotros.html">Sobre nosotros</a></li>
-          <li><a href="personajes.html">Personajes</a></li>
-          <li><a href="">Episodios</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
-
     <main>
-      <section>
-        <h2>Random Character Generator</h2>
-        <form>
-          <label for="gender">Gender:</label>
-          <select id="gender">
-            <option value="">All</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="genderless">Genderless</option>
-            <option value="unknown">Unknown</option>
-          </select>
-
-          <label for="status">Status:</label>
-          <select id="status">
-            <option value="">All</option>
-            <option value="alive">Alive</option>
-            <option value="dead">Dead</option>
-            <option value="unknown">Unknown</option>
-          </select>
-
-          <label for="species">Species:</label>
-          <input type="text" id="species" />
-
-          <input type="submit" value="Generate" />
-        </form>
-
-        <div class="result"></div>
-      </section>
+      <header>
+        <nav>
+          <h1>Trabajo Integrador</h1>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobreNosotros.html">Sobre nosotros</a></li>
+            <li><a href="personajes.html">Personajes</a></li>
+            <li><a href="">Episodios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+      <h2>Personaliza tu tarjeta</h2>
 
       <section>
-        <h2>All Characters</h2>
-        <div class="row"></div>
-        <!-- Agregamos este div -->
+        <div class="container">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Selecciona el personaje que quieres
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div>
+                    <form>
+                      <label class="col-form-label" for="gender">Genero</label>
+                      <select class="col-form-control" id="gender">
+                        <option value="">Todos</option>
+                        <option value="male">Masculino</option>
+                        <option value="female">Femenino</option>
+                        <option value="genderless">Sin genero</option>
+                        <option value="unknown">Desconocido</option>
+                      </select>
 
-        <div class="pagination"></div>
+                      <label class="col-form-label" for="status">Estado</label>
+                      <select class="col-form-control" id="status">
+                        <option value="">Todos</option>
+                        <option value="alive">Vivo</option>
+                        <option value="dead">Muerto</option>
+                        <option value="unknown">Desconocido</option>
+                      </select>
+
+                      <label class="col-form-label" for="species">Especie</label>
+                      <input class="col-form-control" type="text" id="species" />
+
+                      <input type="submit" value="Generate" />
+                    </form>
+
+                    <div class="result">
+                      <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-5" id="personajes"></div>
+                      <!-- Agregamos este div -->
+
+                      <div class="pagination" id="paginas"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Elije el tipo de tarjeta que quieres
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="d-flex flex-row flex-wrap">
+                    <div class="btn-group">
+                      <button class="btn btn-primary" id="btn-navidad">Navidad</button>
+                      <button class="btn btn-primary" id="btn-cumpleaños">Cumpleaños</button>
+                      <button class="btn btn-primary" id="btn-aniversario">Aniversario</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="txt1" class="col-form-label">Texto superior</label>
+                      <input type="text" class="campo form-control" id="txt1" />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="txt2" class="col-form-label">Texto inferior</label>
+                      <input type="text" class="campo form-control" id="txt2" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <buttons
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Tarjeta terminada
+                </buttons>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="container d-flex flex-row justify-content-center mt-5 mb-5">
+                  <div class="card text-center shadow-lg">
+                    <div class="card-header bg-transparent" id="tarjetaSuperior"></div>
+
+                    <img src="https://rickandmortyapi.com/api/character/avatar/4.jpeg" class="tarjeta-img" alt="..." id="tarjetaImg" />
+                    <div class="card-img-overlay">
+                      <h3 class="card-title" id="tarjetaTitulo"></h3>
+                      <p class="card-text" id="tarjetaTexto"></p>
+                      <p class="card-text" id="tarjetaTextoSmall"><small></small></p>
+                    </div>
+                    <div class="card-footer bg-transparent" id="tarjetaInferior"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--footer a continuacion-->
+        <div class="pieDePagina--">
+          <footer class="pie--footer">
+            <div class="redes--sociales">
+              <i class="fa-brands fa-facebook"><p class="redes--">Rick&Morty</p> </i>
+              <i class="fa-brands fa-whatsapp"><p class="redes--">2236598712</p></i>
+              <i class="fa-brands fa-youtube"><p class="redes--">Dimensionc137</p></i>
+              <i class="fa-brands fa-instagram"><p class="redes--">Rick_Morty</p></i>
+            </div>
+          </footer>
+        </div>
       </section>
     </main>
 
-    <!--footer a continuacion-->
-    <div class="pieDePagina--">
-      <footer class="pie--footer">
-        <div class="redes--sociales">
-          <i class="fa-brands fa-facebook"><p class="redes--">Rick&Morty</p> </i>
-          <i class="fa-brands fa-whatsapp"><p class="redes--">2236598712</p></i>
-          <i class="fa-brands fa-youtube"><p class="redes--">Dimensionc137</p></i>
-          <i class="fa-brands fa-instagram"><p class="redes--">Rick_Morty</p></i>
-        </div>
-      </footer>
-    </div>
+    <script>
+      let txt_superior = "";
+      let txt_inferior = "";
+      let tipo = "";
+      let personaje_id = 1;
+      let img_src = "";
 
-    <script src="app.js"></script>
+      $(document).ready(function () {
+        fetchCharacters().then((characters) => {
+          console.log("carga ok");
+          renderCharacters(characters);
+
+          //Evento para cuando se selecciona un personaje.
+          //Se ponen los eventos click después de generar los personajes porque antes aún no existen
+          $(".personaje").click(function () {
+            $(".personaje").removeClass("border-success");
+
+            $(this).addClass("border-success");
+            img_src = $(this).find("img").attr("src");
+            console.log(img_src);
+
+            personaje_id = $(this)[0].id;
+            updateTarjeta();
+          });
+        });
+
+        function updateTarjeta() {
+          txt_superior = $("#txt1").val();
+          txt_inferior = $("#txt2").val();
+
+          $("#tarjetaImg").attr("src", img_src);
+          $("#tarjetaTitulo").text(tipo);
+          if (txt_superior.length > 0) {
+            $("#tarjetaSuperior").text(txt_superior);
+            $("#tarjetaSuperior").removeClass("d-none");
+          } else $("#tarjetaSuperior").addClass("d-none");
+
+          if (txt_inferior.length > 0) {
+            $("#tarjetaInferior").text(txt_inferior);
+            $("#tarjetaInferior").removeClass("d-none");
+          } else $("#tarjetaInferior").addClass("d-none");
+        }
+        $("#accordionExample").on("show.bs.collapse", function () {
+          updateTarjeta();
+
+          //on clicking the accordion menu
+        });
+
+        //Eventos click para los botones de tipo de tarjeta (estos existen desde el principio)
+        $("#btn-navidad").click(function () {
+          tipo = "¡Feliz navidad!";
+        });
+
+        $("#btn-cumpleaños").click(function () {
+          tipo = "¡Feliz cumpleaños!";
+        });
+
+        $("#btn-aniversario").click(function () {
+          tipo = "¡Feliz aniversario!";
+        });
+      });
+    </script>
+
+    <script src="personajes.js"></script>
   </body>
 </html>
