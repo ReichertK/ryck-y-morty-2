@@ -1,7 +1,8 @@
 
   body { 
     /* font-family: Arial, sans-serif; */
-    min-width: 350px;
+    min-width: 400px;
+    /* max-width: 1200px; */
     
   }
   
@@ -12,6 +13,7 @@
     margin-top: 30px;
     display: flex;
     align-items: center;
+    width: 100%;
     
   }
 
@@ -27,15 +29,36 @@
     padding-left: 8px;
   }
 
-  /* @media only screen and (max-width: 600px) {
-    .card {
-      width: 100%;
-    }
-  } */
-  
+  .nosotros {
+    text-align: justify;
+    text-justify: inter-word;
+  }
 
-  .personaje:hover {
-    background-color: darkgray;
+
+@media (min-width: 900px) {
+  .nosotros-cont {
+    width: 900px;
+    max-width: 900px;
+  }
+}
+
+.nav-logo {
+  height: 48px;
+}
+
+@media (max-width: 500px) {
+  .nav-titulo {
+    font-size: 16px;
+  }
+
+  .nav-logo {
+    height: 32px;
+  }
+}
+
+
+.personaje:hover {
+  background-color: darkgray;
   }
 
 .tarjeta-ancho {
@@ -48,5 +71,5 @@
 }
 
 .sep-nav {
-  margin-top: 100px;
+  margin-top: 120px;
 }

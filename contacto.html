@@ -25,9 +25,10 @@
   </head>
 
   <body>
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark pt-3 pb-3">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark pt-3 pb-3">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Tienda Rick&Morty</a>
+        <a class="navbar-brand"> <img src="img/rick-and-morty-icon-png-images-29.png" alt="Logo" class="nav-logo" /></a>
+        <a class="navbar-brand"> <h2 class="nav-titulo">Tarjetas de Rick & Morty</h2></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -42,45 +43,48 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-link" href="index.html">Inicio</a>
-            <a class="nav-link" href="sobreNosotros.html">Sobre nosotros</a>
-            <a class="nav-link" href="personalizado.html">Personajes</a>
-            <a class="nav-link active" href="contacto.html">Contacto</a>
+            <a class="nav-link" href="galeria.html">Galeria</a>
+            <a class="nav-link" href="personalizado.html">Personalizados</a>
+            <a class="nav-link active" href="sobreNosotros.html">Sobre nosotros</a>
+            <a class="nav-link" href="contacto.html">Contacto</a>
           </div>
         </div>
       </div>
     </nav>
 
-    <div class="container w-75 sep-nav" id="contacto">
-      <div class="mt-5 mb-2">
-        <h2>Sección de contacto</h2>
-        <p>Si tienes alguna consulta o sujerencia, por favor, completa el siguiente formulario.</p>
+    <div class="container sep-nav d-flex flex-column align-items-center" id="contacto">
+      <div class="nosotros-cont">
+        <form action="submit">
+          <div class="mt-5 mb-2">
+            <h2>Sección de contacto</h2>
+            <p class="mt-2 mb-2">Si tienes alguna consulta o sujerencia, por favor, completa el siguiente formulario.</p>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="nombre" class="col-form-label">Nombre</label>
+              <input type="text" class="campo form-control" id="nombre" placeholder="Nombre" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="apellido" class="col-form-label">Apellido</label>
+              <input type="text" class="campo form-control" id="apellido" placeholder="Apellido" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-form-label">Email</label>
+            <input type="email" class="campo form-control" id="email" placeholder="Email" />
+          </div>
+          <div class="form-group">
+            <label for="mensaje" class="col-form-label">Mensaje</label>
+            <textarea class="campo form-control" id="mensaje" rows="5"></textarea>
+          </div>
+          <div class="mt-3">
+            <button type="submit" class="btn btn-primary w-100" id="enviar">Enviar consulta</button>
+          </div>
+          <div class="campo alert mt-3 mb-3 d-none" role="alert" id="alerta">
+            <div>¡La solicitud se ha enviendo con éxito!</div>
+          </div>
+        </form>
       </div>
-      <div class="row">
-        <div class="form-group col-md-6">
-          <label for="nombre" class="col-form-label">Nombre</label>
-          <input type="text" class="campo form-control" id="nombre" placeholder="Nombre" />
-        </div>
-        <div class="form-group col-md-6">
-          <label for="apellido" class="col-form-label">Apellido</label>
-          <input type="text" class="campo form-control" id="apellido" placeholder="Apellido" />
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="email" class="col-form-label">Email</label>
-        <input type="email" class="campo form-control" id="email" placeholder="Email" />
-      </div>
-      <div class="form-group">
-        <label for="mensaje" class="col-form-label">Mensaje</label>
-        <textarea class="campo form-control" id="mensaje" rows="5"></textarea>
-      </div>
-      <div class="mt-3">
-        <button type="submit" class="btn btn-primary w-100" id="enviar">Enviar consulta</button>
-      </div>
-      <div class="campo alert mt-3 mb-3 d-none" role="alert" id="alerta">
-        <div>¡La solicitud se ha enviendo con éxito!</div>
-      </div>
-
-      <form class="d-none"></form>
     </div>
 
     <script>
