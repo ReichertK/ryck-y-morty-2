@@ -11,7 +11,7 @@ function fetchCharacters(page = 1) {
 }
 
 // Función que renderiza los personajes en el DOM
-function renderCharacters(characters) {
+function renderCharacters(characters, comprar) {
   const container = document.querySelector('#personajes');
   container.innerHTML = '';
 
@@ -24,7 +24,7 @@ function renderCharacters(characters) {
     div_card.id = "character" + character.id;
 
     let div = document.createElement('div');    //div cuerpo de la tarjeta
-    div.classList.add("card-body");
+    div.classList.add("card-body", "g-0");
 
     let img = document.createElement('img');    //imagen del personaje
     img.classList.add('card-img-top');
@@ -43,6 +43,14 @@ function renderCharacters(characters) {
     div_card.append(img, div);
     div_cont.append(div_card);
     container.append(div_cont);
+
+    if (comprar) {
+      let btn = document.createElement('button');    //boton de compra
+      btn.classList.add("btn", "btn-primary", "w-100", "btnComprar");
+      btn.textContent = "Comprar!";
+      div.append(btn);
+    }
+
   });
 
   

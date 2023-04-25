@@ -53,40 +53,30 @@
     </nav>
 
     <div class="container sep-nav">
-      <h2>Random Character Generator</h2>
-      <form>
-        <label for="gender">Gender:</label>
-        <select id="gender">
-          <option value="">All</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="genderless">Genderless</option>
-          <option value="unknown">Unknown</option>
-        </select>
+      <h2>Galeria de las tarjetas disponibles</h2>
+      <div class="result">
+        <!-- En este div se agregan todos los personajes -->
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5" id="personajes"></div>
+        <!-- En este div se agrean los botones para recorrer las pàginas -->
+        <!-- <div class="pagination" id="paginas"></div> -->
+      </div>
+    </div>
 
-        <label for="status">Status:</label>
-        <select id="status">
-          <option value="">All</option>
-          <option value="alive">Alive</option>
-          <option value="dead">Dead</option>
-          <option value="unknown">Unknown</option>
-        </select>
-
-        <label for="species">Species:</label>
-        <input type="text" id="species" />
-
-        <input type="submit" value="Generate" />
-      </form>
-
-      <div class="result"></div>
-
-      <section>
-        <h2>All Characters</h2>
-        <div class="row"></div>
-        <!-- Agregamos este div -->
-
-        <div class="pagination"></div>
-      </section>
+    <!-- Modal - mostrar venta de compra exitosa -->
+    <div class="modal fade" id="compra" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="ModalLabel">¡Gracias por tu compra!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">En breve te estaremos contactando para indicarte los pasos a seguir</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
     </div>
 
     <!--footer a continuacion-->
@@ -101,6 +91,22 @@
       </footer>
     </div>
 
-    <script src="app.js"></script>
+    <script src="personajes.js"></script>
+
+    <script>
+      let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById("compra")); // Returns a Bootstrap modal instance
+
+      $(document).ready(function () {
+        fetchCharacters().then((characters) => {
+          console.log("carga ok");
+          renderCharacters(characters, "compra");
+
+          //Eventos click para los botones de tipo de tarjeta (estos existen desde el principio)
+          $(".btnComprar").click(function () {
+            modal.show();
+          });
+        });
+      });
+    </script>
   </body>
 </html>

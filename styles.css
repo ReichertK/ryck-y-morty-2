@@ -46,17 +46,6 @@
   height: 48px;
 }
 
-@media (max-width: 500px) {
-  .nav-titulo {
-    font-size: 16px;
-  }
-
-  .nav-logo {
-    height: 32px;
-  }
-}
-
-
 .personaje:hover {
   background-color: darkgray;
   }
@@ -76,12 +65,22 @@
 
 .carousel-max{
   max-width: 640px;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
 }
+
 .carousel-img {
   border-radius: 15px;
+}
+
+@media (max-width: 500px) {
+  .nav-titulo {
+    font-size: 16px;
+  }
+
+  .carousel-max {
+    max-width: 100%;
+  }
+
+  .nav-logo {
+    height: 32px;
+  }
 }
