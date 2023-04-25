@@ -43,16 +43,51 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-link" href="index.html">Inicio</a>
-            <a class="nav-link" href="galeria.html">Galeria</a>
+            <a class="nav-link active" href="galeria.html">Galeria</a>
             <a class="nav-link" href="personalizado.html">Personalizados</a>
-            <a class="nav-link active" href="sobreNosotros.html">Sobre nosotros</a>
+            <a class="nav-link" href="sobreNosotros.html">Sobre nosotros</a>
             <a class="nav-link" href="contacto.html">Contacto</a>
           </div>
         </div>
       </div>
     </nav>
 
-    <div class="container sep-nav d-flex flex-column align-items-center"></div>
+    <div class="container sep-nav">
+      <h2>Random Character Generator</h2>
+      <form>
+        <label for="gender">Gender:</label>
+        <select id="gender">
+          <option value="">All</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="genderless">Genderless</option>
+          <option value="unknown">Unknown</option>
+        </select>
+
+        <label for="status">Status:</label>
+        <select id="status">
+          <option value="">All</option>
+          <option value="alive">Alive</option>
+          <option value="dead">Dead</option>
+          <option value="unknown">Unknown</option>
+        </select>
+
+        <label for="species">Species:</label>
+        <input type="text" id="species" />
+
+        <input type="submit" value="Generate" />
+      </form>
+
+      <div class="result"></div>
+
+      <section>
+        <h2>All Characters</h2>
+        <div class="row"></div>
+        <!-- Agregamos este div -->
+
+        <div class="pagination"></div>
+      </section>
+    </div>
 
     <!--footer a continuacion-->
     <div class="pieDePagina--">
@@ -65,5 +100,7 @@
         </div>
       </footer>
     </div>
+
+    <script src="app.js"></script>
   </body>
 </html>
