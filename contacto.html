@@ -54,7 +54,7 @@
 
     <div class="container sep-nav d-flex flex-column align-items-center" id="contacto">
       <div class="nosotros-cont">
-        <form action="submit">
+        <form action="submit" id="formulario">
           <div class="mt-5 mb-2">
             <h2>Sección de contacto</h2>
             <p class="mt-2 mb-2">Si tienes alguna consulta o sujerencia, por favor, completa el siguiente formulario.</p>
@@ -89,7 +89,9 @@
 
     <script>
       $(document).ready(function () {
-        $("#enviar").click(function () {
+        $("#formulario").on("submit", function (e) {
+          e.preventDefault();
+
           console.log($("#nombre").text());
           //Reiniciar el estado del alerta y de los bordes al iniciar la validación
           $(".campo").removeClass("border-danger", "border-success");
