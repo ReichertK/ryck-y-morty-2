@@ -118,6 +118,6 @@ function init() {
 }
 
 // Inicialización de la aplicación
-//init();
+init();
 
 let listaPersonajes = {};
